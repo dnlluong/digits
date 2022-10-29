@@ -44,7 +44,11 @@ body .navbar {
   --bs-navbar-color: var(--matr-navbar-text-color);
   --bs-navbar-hover-color: var(--matr-navbar-highlight-text);
 }
-We need to change the color of the dropdown text.
+
 .bg-dark a.dropdown-item {
   color: var(--matr-navbar-bg);
+}
+
+.navbar a.nav-link.active {
+  color: var(--matr-navbar-highlight-text);
 }
