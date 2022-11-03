@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Card, Image } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-const Contact= ({ contact }) => (
+const Contact = ({ contact }) => (
   <Card className="h-100">
     <Card.Header>
       <Image src={contact.image} width={75} />
@@ -13,6 +13,8 @@ const Contact= ({ contact }) => (
     </Card.Header>
     <Card.Body>
       <Card.Text>{contact.description}</Card.Text>
+      <Link to={`/edit/${contact._id}`}>Edit</Link>
+
     </Card.Body>
   </Card>
 );

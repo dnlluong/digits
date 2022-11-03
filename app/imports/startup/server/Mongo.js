@@ -16,7 +16,7 @@ if (Stuffs.collection.find().count() === 0) {
     console.log('Creating default data.');
     Meteor.settings.defaultData.forEach(data => addData(data));
   }
-};
+}
 
 const addContact = (contact) => {
   console.log(`  Adding: ${contact.lastName} (${contact.owner})`);

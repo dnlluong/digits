@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { Card, Image } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-const ContactAdmin= ({ contact }) => (
+const ContactAdmin = ({ contact }) => (
   <Card className="h-100">
     <Card.Header>
       <Image src={contact.image} width={75} />
