@@ -34,32 +34,32 @@ const EditContact = () => {
   const submit = (data) => {
     const { firstName, lastName, address, image, description } = data;
     Contacts.collection.update(_id, { $set: { firstName, lastName, address, image, description } }, (error) => (error ?
-        swal('Error', error.message, 'error') :
-        swal('Success', 'Item updated successfully', 'success')));
+      swal('Error', error.message, 'error') :
+      swal('Success', 'Item updated successfully', 'success')));
   };
 
   return ready ? (
-      <Container className="py-3">
-        <Row className="justify-content-center">
-          <Col xs={10}>
-            <Col className="text-center"><h2>Edit Contacts</h2></Col>
-            <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
-              <Card>
-                <Card.Body>
-                  <TextField name="firstName" />
-                  <TextField name="lastName" />
-                  <TextField name="address" />
-                  <TextField name="image" />
-                  <LongTextField name="description" />
-                  <SubmitField value="Submit" />
-                  <ErrorsField />
-                  <HiddenField name="owner" />
-                </Card.Body>
-              </Card>
-            </AutoForm>
-          </Col>
-        </Row>
-      </Container>
+    <Container className="py-3">
+      <Row className="justify-content-center">
+        <Col xs={10}>
+          <Col className="text-center"><h2>Edit Contacts</h2></Col>
+          <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
+            <Card>
+              <Card.Body>
+                <TextField name="firstName" />
+                <TextField name="lastName" />
+                <TextField name="address" />
+                <TextField name="image" />
+                <LongTextField name="description" />
+                <SubmitField value="Submit" />
+                <ErrorsField />
+                <HiddenField name="owner" />
+              </Card.Body>
+            </Card>
+          </AutoForm>
+        </Col>
+      </Row>
+    </Container>
   ) : <LoadingSpinner />;
 };
 
